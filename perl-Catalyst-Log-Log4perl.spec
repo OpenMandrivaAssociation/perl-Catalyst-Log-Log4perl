@@ -1,24 +1,24 @@
 %define upstream_name    Catalyst-Log-Log4perl
 %define upstream_version 1.04
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Integrates Log::Log4perl with Catalyst
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Integrates Log::Log4perl with Catalyst
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Catalyst)
-BuildRequires: perl(Data::Dump)
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(Log::Log4perl)
-BuildRequires: perl(MRO::Compat)
-BuildRequires: perl(Params::Validate)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Catalyst)
+BuildRequires:	perl(Data::Dump)
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(Log::Log4perl)
+BuildRequires:	perl(MRO::Compat)
+BuildRequires:	perl(Params::Validate)
+BuildArch:	noarch
 
 %description
 This module provides a the Catalyst::Log manpage implementation that uses
@@ -36,24 +36,26 @@ already provided by the Log::Log4perl manpage.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc META.yml Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 1.40.0-2mdv2011.0
++ Revision: 654251
+- rebuild for updated spec-helper
+
+* Sat Jan 01 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.40.0-1mdv2011.0
++ Revision: 627143
+- import perl-Catalyst-Log-Log4perl
 
