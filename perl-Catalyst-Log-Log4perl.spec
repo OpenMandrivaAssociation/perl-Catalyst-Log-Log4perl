@@ -1,15 +1,15 @@
 %define upstream_name    Catalyst-Log-Log4perl
-%define upstream_version 1.04
+%define upstream_version 1.06
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Integrates Log::Log4perl with Catalyst
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/Catalyst-Log-Log4perl-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Catalyst)
@@ -58,4 +58,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Sat Jan 01 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.40.0-1mdv2011.0
 + Revision: 627143
 - import perl-Catalyst-Log-Log4perl
+
 

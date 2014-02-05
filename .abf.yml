@@ -1,2 +1,4 @@
+removed_sources:
+  Catalyst-Log-Log4perl-1.04.tar.gz: 2979af69050dbb22fe05652ac09ef13b0f6249f8
 sources:
-  "Catalyst-Log-Log4perl-1.04.tar.gz": 2979af69050dbb22fe05652ac09ef13b0f6249f8
+  Catalyst-Log-Log4perl-1.06.tar.gz: 9a5ba2cccb2aa4dd7d10d1667530a6b70a3e63b7
