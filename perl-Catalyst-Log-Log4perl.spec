@@ -1,15 +1,13 @@
 %define upstream_name    Catalyst-Log-Log4perl
-%define upstream_version 1.06
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	1.06
+Release:	5
 
 Summary:	Integrates Log::Log4perl with Catalyst
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://dev.catalyst.perl.org/repos/Catalyst/trunk/historical/Catalyst-Log-Log4perl
-Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/Catalyst-Log-Log4perl-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/Catalyst-Log-Log4perl-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -34,7 +32,7 @@ These methods simply return 0 and do nothing, as similar functionality is
 already provided by the Log::Log4perl manpage.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
